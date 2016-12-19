@@ -1,0 +1,34 @@
+{
+  "name": "sambenne/laravel-sass",
+  "type": "library",
+  "description": "Compiles your SASS .scss files to .css.",
+  "keywords": ["sass", "scss", "css"],
+  "homepage": "https://github.com/sambenne/laravel-sass",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Sam Bennett",
+      "homepage": "https://stackoverflow.com/cv/sambenne",
+      "role": "Developer"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/sambenne/laravel-sass/issues",
+    "source": "https://github.com/sambenne/laravel-sass"
+  },
+  "autoload": {
+    "psr-4": {
+      "SamBenne\\LaravelSass\\": "src"
+    }
+  },
+  "require": {
+    "php": ">=5.3.0",
+    "leafo/scssphp": "v0.0.14"
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "0.1-dev"
+    }
+  },
+  "minimum-stability": "dev"
+}
