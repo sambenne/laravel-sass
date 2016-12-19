@@ -2,6 +2,8 @@
 
     namespace SamBenne\LaravelSass;
 
+    use Illuminate\Support\ServiceProvider;
+
     class SassServiceProvider extends ServiceProvider
     {
         /**
@@ -19,10 +21,10 @@
          */
         public function register()
         {
-            $configPath = __DIR__.'/../config/laravel-sass.php';
+            $configPath = __DIR__.'/config/laravel-sass.php';
             $this->mergeConfigFrom($configPath, 'laravel-sass');
 
-            $this->app->bind('laravelSass', function() {
+            $this->app->bind('laravel-sass', function() {
 
                 $options = $this->app->make('laravel-sass');
                 $laravelSass = new LaravelSass($options);
@@ -30,6 +32,6 @@
 
                 return $laravelSass;
             });
-            $this->app->alias('laravelSass', LaravelSass::class);
+            $this->app->alias(LaravelSass::class, 'laravel-sass');
         }
     }

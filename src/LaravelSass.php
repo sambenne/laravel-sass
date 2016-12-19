@@ -10,7 +10,10 @@
 
         public function __construct(array $options = [])
         {
-            echo "<pre>" . print_r($options, true) . "</pre>";
             $this->options = $options;
+        }
+
+        public function getOptions() {
+            return $this->options;
         }
     }
