@@ -22,9 +22,9 @@
             return $scss->compile($sass);
         }
 
-        public function Store($fromFile, $toFile)
+        public function Store($fromFile, $toFile, $raw = false)
         {
-            $contents = $this->Compile(file_get_contents($fromFile));
+            $contents = $this->Compile($raw ? $fromFile : file_get_contents($fromFile));
             $bytes_written = \File::put($toFile, $contents);
             if ($bytes_written === false) {
                 die("Error writing to file");
